@@ -6,9 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "e2e": "ng e2e"
   },
   "husky": {
     "hooks": {
@@ -55,5 +55,4 @@
     "tslint": "~6.1.0",
     "typescript": "~4.1.2"
   }
-
 }
