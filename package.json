@@ -7,8 +7,18 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,json}": "prettier --write"
+  },
+  "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{ts,css,html}\"",
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.2.1",
@@ -44,10 +54,6 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.1.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && ng test --watch=false --browsers=ChromeHeadless"
-    }
   }
+
 }
